@@ -10,9 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_26_151650) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_26_160412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "content"
+    t.boolean "is_correct"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_comments_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "challenge_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_questions_on_challenge_id"
+  end
+
+  create_table "user_answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.bigint "answer_id", null: false
+    t.bigint "user_challenge_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_user_answers_on_answer_id"
+    t.index ["question_id"], name: "index_user_answers_on_question_id"
+    t.index ["user_challenge_id"], name: "index_user_answers_on_user_challenge_id"
+  end
+
+  create_table "user_challenges", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.bigint "challenge_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_user_challenges_on_challenge_id"
+    t.index ["user_id"], name: "index_user_challenges_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +75,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_151650) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.boolean "is_teacher", default: false
+    t.integer "challenges_per_day"
+    t.integer "knowledge_level"
+    t.integer "ruby_gems"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "comments", "questions"
+  add_foreign_key "questions", "challenges"
+  add_foreign_key "user_answers", "answers"
+  add_foreign_key "user_answers", "questions"
+  add_foreign_key "user_answers", "user_challenges"
+  add_foreign_key "user_challenges", "challenges"
+  add_foreign_key "user_challenges", "users"
 end
