@@ -1,15 +1,15 @@
 .header-sign-up{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items:start;
   background-color: $medium-pink;
-  padding: 20px;
+  padding: 20px 20px 7px 20px;
 }
 
 .sign-up-logo img{
-  width: 50px;
-  height: 50px;
+  height: 36px;
+  margin: 25px 0px 10px 0px;
 }
 
 .sign-up-text{
@@ -21,15 +21,31 @@
 
 .sign-up-text h1{
   color: $dark-blue;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.sign-up-text p{
+  color: whitesmoke;
+  font-weight:300;
+  margin-bottom: 3px;
 }
 
 body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: $medium-pink;
 }
+.login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-.container {
+.container-registration-form {
+  flex-grow: 1;
   padding: 30px;
- height: 100vh;
   border-radius: 30px 30px 0px 0px;
   background-color: whitesmoke;
 }

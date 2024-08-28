@@ -1,0 +1,21 @@
+<div class="container header-select-level">
+  <div class="header-logo">
+    <%= image_tag "rubylingo-logo-opacity0.png" %>
+  </div>
+  <div class="header-text-title">
+    <h1>Student</h1>
+  </div>
+  <div class="student-img">
+   <%= image_tag "student2.png" %>
+  </div>
+  <div class="header-text-title">
+    <h2>Challenges per day</h2>
+  </div>
+  <div class="container levels_challenges">
+  <%= link_to '1 challenge', user_registration_path(user: { knowledge_level: 1 }), class: "btn_secondary", data: {turbo_method: :patch} %>
+  <%= link_to '2 challenges', user_registration_path(user: { knowledge_level: 2 }), class: "btn_secondary", data: {turbo_method: :patch} %>
+  <%= link_to '4+ challenge', user_registration_path(user: { knowledge_level: 3 }), class: "btn_secondary", data: {turbo_method: :patch} %>
+  </div>
+  <div class="container slider">
+  </div>
+</div>
