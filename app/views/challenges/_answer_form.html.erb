@@ -1,0 +1,13 @@
+<%= simple_form_for @user_answer do |f| %>
+    <%= f.collection_radio_buttons :answer_id, @answers, :id, :content %>
+    <%= f.hidden_field :user_challenge_id, :value => @user_challenge.id %>
+    <%= f.hidden_field :question_id, :value => @question.id %>
+    <%= f.hidden_field :next_question_to_display, :value => @next_question_to_display %>
+    
+    <%# 2. Pass the @user_challenge in the form through a hidden field
+   3. Pass the id of the question in the form through a hidden field %> 
+    
+    <div>
+        <%= f.button :submit, "Continue" %>
+    </div>
+<% end %>

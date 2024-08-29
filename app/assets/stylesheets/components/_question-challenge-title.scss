@@ -1,0 +1,32 @@
+
+
+.question-challenge-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-challenge-title h1{
+    font-weight: bold;
+}
+
+.question-challenge-title i{
+    font-size: 35px;
+    color: #E6C0FF;
+}
+
+.question-title{
+    background-color: $pink;
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-title h3{
+    color: $white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    flex-grow: 1;
+}
+
+

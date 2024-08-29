@@ -1,1 +1,19 @@
-<h1>Challenge 1</h1>
+<div class=" my-4 question-challenge-title">
+    <h1><%= @challenge.title %></h1>
+    <i class="fa-solid fa-life-ring"></i>
+</div>
+
+<div class="question-answer">
+
+    <div class="question-title my-5">
+        <div class="challenge-i ">
+            <i class="fa-solid fa-gem"></i>
+        </div>
+       <h3> <%= @question.content %> </h3>
+    </div>
+
+    
+    <%= render "answer_form" %>
+   
+</div>
+
