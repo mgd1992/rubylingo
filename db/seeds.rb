@@ -8,7 +8,7 @@ Challenge.destroy_all
 
 # Create students
 10.times do |i|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "students_#{i + 1}@gmail.com", password: "1234567", password_confirmation: "1234567")
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "students_#{i + 1}@gmail.com", password: "1234567", password_confirmation: "1234567", knowledge_level: rand(1..3))
 end
 puts "created students"
 
@@ -22,7 +22,7 @@ puts "created teachers"
 # LEVEL 1
 # Challenge 1: INTRODUCTION TO RUBY
 
-challenge_introduction_to_ruby = Challenge.create!(title: "Introduction to ruby", level: 1)
+challenge_introduction_to_ruby = Challenge.create!(title: "Introduction to ruby", level: 1, order: 1)
 
 
 question_array = Question.create!(content: "How do you delimit an Array?", challenge: challenge_introduction_to_ruby)
@@ -62,7 +62,7 @@ Answer.create!(content: "Using the `concat` method", is_correct: false, question
 
 # Challenge 2: VARIABLES AND DATA TYPES
 
-challenge_variables_and_data_type = Challenge.create!(title: "Introduction to ruby", level: 1)
+challenge_variables_and_data_type = Challenge.create!(title: "Variables and data types", level: 1, order: 2)
 
 question_variables_and_data_types_1 = Question.create!(content: "What is the difference between a local and a global variable?", challenge: challenge_variables_and_data_type)
 Answer.create!(content: "Local variables are accessible within a method, while global variables are accessible from anywhere in the program.", is_correct: true, question: question_variables_and_data_types_1)
@@ -91,7 +91,7 @@ Answer.create!(content: "Using the `parse_int` method", is_correct: false, quest
 
 # Challenge 3 manipulation
 
-challenge_string_manipulation = Challenge.create!(title: "String Manipulation", level: 1)
+challenge_string_manipulation = Challenge.create!(title: "String Manipulation", level: 1, order: 3)
 
 question_concatenation = Question.create!(content: "How do you concatenate two strings in Ruby?", challenge: challenge_string_manipulation)
 Answer.create!(content: "Using the `+` operator", is_correct: true, question: question_concatenation)
@@ -133,7 +133,7 @@ Answer.create!(content: "Using a loop to iterate over the string in reverse orde
 
 # LEVEL 2
 
-challenge_control_flow_and_methods = Challenge.create!(title: "Control Flow and Methods", level: 2)
+challenge_control_flow_and_methods = Challenge.create!(title: "Control Flow and Methods", level: 2, order: 1)
 
 # Challenge 1: CONDITIONAL STATEMENTS
 
@@ -159,7 +159,7 @@ Answer.create!(content: "== is used for assignment, while = is used for comparis
 
 # Challenge 2: DATA STRUCTURES
 
-challenge_data_structures = Challenge.create!(title: "Data Structures", level: 2)
+challenge_data_structures = Challenge.create!(title: "Data Structures", level: 2, order: 2)
 
 question_hash = Question.create!(content: "How do you access a value in a Hash using a key?", challenge: challenge_data_structures)
 Answer.create!(content: "hash.key", is_correct: false, question: question_hash)
@@ -188,7 +188,7 @@ Answer.create!(content: "There is no difference between a binary search tree and
 
 # Challenge 3 
 
-challenge_control_flow = Challenge.create!(title: "Control Flow", level: 2)
+challenge_control_flow = Challenge.create!(title: "Control Flow", level: 2, order: 3)
 
 question_conditionals = Question.create!(content: "What is the purpose of the `elsif` keyword?", challenge: challenge_control_flow)
 Answer.create!(content: "To provide an alternative condition to be checked if the first condition is false", is_correct: true, question: question_conditionals)
@@ -227,7 +227,7 @@ Answer.create!(content: "There is no difference between `break` and `next`.", is
 
 # LEVEL 3
 
-challenge_advanced_ruby_concepts = Challenge.create!(title: "Advanced Ruby Concepts", level: 3)
+challenge_advanced_ruby_concepts = Challenge.create!(title: "Advanced Ruby Concepts", level: 3, order: 1)
 
 # Challenge 1 
 question_metaprogramming = Question.create!(content: "What is the purpose of the `method_missing` method?", challenge: challenge_advanced_ruby_concepts)
@@ -267,7 +267,7 @@ Answer.create!(content: "class.constants", is_correct: false, question: question
 
 # Challenge 2
 
-challenge_testing_and_debugging = Challenge.create!(title: "Testing and Debugging", level: 3)
+challenge_testing_and_debugging = Challenge.create!(title: "Testing and Debugging", level: 3, order: 2)
 
 question_tdd = Question.create!(content: "What is the core principle of TDD, and how does it help in writing better code?", challenge: challenge_testing_and_debugging)
 Answer.create!(content: "Write a failing test first, then write the code to make it pass. This approach helps ensure code correctness and maintainability.", is_correct: true, question: question_tdd)
@@ -296,7 +296,7 @@ Answer.create!(content: "Profiling is used to write tests for your code.", is_co
 
 # Challenge 3
 
-challenge_string_manipulation = Challenge.create!(title: "String Manipulation", level: 3)
+challenge_string_manipulation = Challenge.create!(title: "String Manipulation", level: 3, order: 3)
 
 question_regular_expressions_advanced = Question.create!(content: "What is the purpose of the `\\A` and `\\z` anchors in a regular expression?", challenge: challenge_string_manipulation)
 Answer.create!(content: "To match the beginning and end of a string, respectively.", is_correct: true, question: question_regular_expressions_advanced)

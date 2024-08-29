@@ -1,0 +1,37 @@
+
+
+<h1 class="text-center mt-5">Level <%= current_user.knowledge_level %></h1>
+
+<h3 class="text-center mb-5">Challenges</h3>
+
+<ul class="p-0">
+
+    <% @challenges.each do |challenge| %>
+        <%# If the user has a user_challenge for the current challenge then he should be able to access it %>
+        <%# If not, the level is disabled %>
+        <div class="challenge-list">
+            <% if current_user.user_challenges.find { |user_challenge| user_challenge.challenge_id == challenge.id } %>
+                <div class="challenge-card active">
+                    <div class="challenge-i ">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div class="challenge-title">
+                        <li class="list-unstyled "> <%= link_to challenge.title, challenge_path(challenge) %></li>
+                        <p>To do</p>
+                    </div>
+                </div>
+            <% else %>
+                <div class="challenge-card">
+                    <div class="challenge-i">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="challenge-title">
+                        <li class="list-unstyled locked"> <%= challenge.title %></li>
+                        <p>Locked</p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+
+</ul>
