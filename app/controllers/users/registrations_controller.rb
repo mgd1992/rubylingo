@@ -20,9 +20,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -52,7 +52,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    test_path
+    select_level_path
+  end
+
+  def after_update_path_for(resource)
+    if request.referrer.include?("select_level")
+      flash.delete(:notice)
+      challenges_per_day_path
+    elsif request.referrer.include?("challenges_per_day")
+      flash.delete(:notice)
+      root_path # TODO: Change to Challenges#index
+    end
   end
 
   def update_resource(resource, params)
