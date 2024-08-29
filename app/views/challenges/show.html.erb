@@ -1,19 +1,40 @@
 <div class=" my-4 question-challenge-title">
     <h1><%= @challenge.title %></h1>
-    <i class="fa-solid fa-life-ring"></i>
+    <div class="question-help">
+        <i class="fa-regular fa-circle-question"></i>
+        <p>Help</p>
+    </div>
 </div>
 
-<div class="question-answer">
+
+
+<% if @question.present? %>
 
     <div class="question-title my-5">
-        <div class="challenge-i ">
+        <div class="gem-i">
             <i class="fa-solid fa-gem"></i>
         </div>
-       <h3> <%= @question.content %> </h3>
+        <div class="question-h4">
+            <h4> <%= @question.content %> </h4>
+        </div>
+    </div>
+    <%= render "answer_form" %>
+<% else %>
+
+    <div class="score-title">
+        <i class="fa-solid fa-circle-check"></i>
+        <p>Well done!</p>
     </div>
 
+    <div class="score">
+        <div class="score-num">
+            <p>Your score:</p>
+            <p> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
+            <%= link_to 'Next challange'%>
+        </div>
+    </div>
     
-    <%= render "answer_form" %>
-   
-</div>
+<% end %>   
+
+
 

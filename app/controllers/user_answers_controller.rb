@@ -3,7 +3,7 @@ class UserAnswersController < ApplicationController
     @user_answer = UserAnswer.new(user_answer_params)
 
     if @user_answer.save
-      redirect_to challenge_path(@user_answer.challenge, question: params[:user_answer][:next_question_to_display])
+      redirect_to challenge_path(@user_answer.challenge)
     end
   end
 
