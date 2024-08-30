@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Profile</h1>
+</div>
+<div class="container profile-info">
+  <div class="profile-img">
+    <%= image_tag "rosalinda.png" %>
+  </div>
+  <div>
+   <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+  </div>
+</div>
+<div class="container progress-card">
+  <h5>You did well this week!</h5>
+  <h4><%= current_user.user_challenges.count %> challenges completed / <%= @challenges.count %></h4>
+  <div class="progress-bar"></div>
+</div>
+<div class="container">
+<div class="container leaderboard-card">
+  <h1>Leaderboard</h1>
+  <p>This week you crushed the challenges! Well done!</p>
+  <div class="users-leaderboard">
+    <div class="avatar-leader">
+      <%= image_tag "Norika.png" %>
+    </div>
+    <p>1. Norika</p>
+  </div>
+  <div class="users-leaderboard">
+    <div class="avatar-leader">
+      <%= image_tag "Marcoo.png" %>
+    </div>
+    <p>2. Marco</p>
+  </div>
+    <div class="users-leaderboard">
+    <div class="avatar-leader">
+      <%= image_tag "Moises.png" %>
+    </div>
+    <p>3. Moises</p>
+  </div>
+  </div>
+
+</div>
