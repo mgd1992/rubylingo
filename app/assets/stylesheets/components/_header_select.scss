@@ -6,7 +6,6 @@
 body{
   height: 100vh;
   display: flex;
-  background-color: $light-pink;
 }
 
 .header-select-level {
@@ -14,6 +13,8 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  background-color: $light-pink;
 }
 .header-text-title h1 {
   color: $dark-blue;
