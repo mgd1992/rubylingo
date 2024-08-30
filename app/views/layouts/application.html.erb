@@ -15,7 +15,7 @@
       <%= render "shared/navbar" %>      
     <% end %>
     <%= render "shared/flashes" %>
-    <div class="<%= "main-container" unless @full_page %>">
+    <div class="flex-grow-1 <%= "main-container" unless @full_page %>">
       <%= yield %>
     </div>
     <% unless @full_page %>

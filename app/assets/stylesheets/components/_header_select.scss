@@ -1,0 +1,63 @@
+.header-logo img{
+  height: 36px;
+  margin: 60px 0px 15px 0px;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+}
+
+.header-select-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: $light-pink;
+}
+.header-text-title h1 {
+  color: $dark-blue;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+.header-text-title h2 {
+  color: $dark-blue;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.student-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slider {
+  margin-top: 30px;
+  width: 45px;
+  height: 5px;
+  border-radius: 30px;
+  background-color: $dark-red;
+}
+.levels {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+}
+.levels_challenges {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
