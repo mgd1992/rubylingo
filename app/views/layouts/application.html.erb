@@ -11,11 +11,15 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% unless @full_page %>
+      <%= render "shared/navbar" %>      
+    <% end %>
     <%= render "shared/flashes" %>
-    <div class="main-container">
+    <div class="<%= "main-container" unless @full_page %>">
       <%= yield %>
     </div>
-    <%= render "shared/footer" %>
+    <% unless @full_page %>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>

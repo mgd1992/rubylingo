@@ -1,0 +1,31 @@
+.home{
+    background-color: $dark-red;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home h1{
+    color: $light-gray;
+    font-size: 30px;
+    margin-bottom: 35px;
+    font-weight: 300;
+
+}
+
+.home img{
+    width: 270px;
+}
+
+.home a{
+    margin-top: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color: $light-red;
+    color: $light-gray;
+    padding: 10px;
+}
