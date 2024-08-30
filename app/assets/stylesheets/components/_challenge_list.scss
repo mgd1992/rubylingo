@@ -5,7 +5,15 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 20px 20px;
+    background-color: $light-gray;
+}
+
+.challenge-list:first-child{
     background-color: $medium-pink;
+}
+
+.challenge-list:first-child .challenge-title a{
+    color: black;
 }
 
 .challenge-card{
@@ -43,16 +51,17 @@
 }
 
 .challenge-title a{
-    color: #FFF;
+    color: $gray;
     font-weight: bold;
     text-decoration: none;
 }
 
 .challenge-title .locked{
-    color: $light-gray;
+    color: $medium-gray;
     font-weight: bold;
 }
 
 .challenge-title p{
-    color: $light-gray;
+    color: $dark-blue;
+    
 }
