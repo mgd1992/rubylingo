@@ -61,7 +61,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       challenges_per_day_path
     elsif request.referrer.include?("challenges_per_day")
       flash.delete(:notice)
-      root_path # TODO: Change to Challenges#index
+      challenges_path
     end
   end
 

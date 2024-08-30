@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/select_level', to: "users#select_level", as: "select_level"
   get '/challenges_per_day', to: "users#challenges_per_day", as: "challenges_per_day"
+  resources :challenges, only: [:index, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
