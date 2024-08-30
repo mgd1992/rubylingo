@@ -1,0 +1,13 @@
+<%= simple_form_for @user_answer do |f| %>
+
+    <div class="d-flex flex-column answers">
+        <%= f.collection_radio_buttons :answer_id, @answers, :id, :content %>
+        <%= f.hidden_field :user_challenge_id, :value => @user_challenge.id %>
+        <%= f.hidden_field :question_id, :value => @question.id %>
+    </div>
+
+    <div class="btn-next my-3">
+        <%= f.button :submit, "Continue" %>
+    </div>
+
+<% end %>

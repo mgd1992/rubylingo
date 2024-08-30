@@ -1,5 +1,6 @@
 require 'faker'
-
+UserAnswer.destroy_all
+UserChallenge.destroy_all
 User.destroy_all
 Answer.destroy_all
 Question.destroy_all

@@ -1,0 +1,79 @@
+// QUESTION  challenge TITLE
+
+.question-challenge-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question-challenge-title h1{
+    font-weight: bold;
+}
+
+.question-help {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-help i{
+    font-size: 25px;
+    color: #E6C0FF;
+}
+
+.question-help p{
+    font-size: 15px;
+    color: #E6C0FF;
+}
+
+.question-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $pink;
+    border-radius: 7px 7px;
+}
+
+.gem-i{
+    padding: 20px;
+}
+
+.gem-i i{
+    font-size: 35px;
+
+}
+
+.question-h4{
+    flex-grow: 1;
+}
+
+.question-h4 h4{
+    font-size: 17px;
+    color: $white;
+}
+
+.answers span{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.answers span label{
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.btn-next{
+    width: 100%;
+    border-radius: 10px 10px;
+    background-color: $light-red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-next btn{
+    color: $white;
+}
+
+
