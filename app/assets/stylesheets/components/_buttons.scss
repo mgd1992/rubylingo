@@ -1,21 +1,30 @@
-.btn-level-challenge {
-width: 344.44px;
-height: 52.709px;
-flex-shrink: 0;
-fill: $dark-red;
-color: whitesmoke;
-}
-
-.btn-create-continue {
-  width: 344.44px;
-  height: 52.709px;
-  flex-shrink: 0;
+.btn_primary {
+  width: 100%;
+  font-weight:500;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 15px;
   color: whitesmoke;
+  background-color: $light-red;
 }
 
-.btn-rewards {
-width: 236px;
-height: 50px;
-flex-shrink: 0;
-color: whitesmoke;
+.btn{
+  font-family: $body-font;
 }
+
+.btn_secondary{
+  width: 100%;
+  font-weight:500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 15px;
+  color: whitesmoke;
+  background-color: $wine-red;
+  text-decoration: none;
+}
+
+
