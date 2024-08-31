@@ -9,9 +9,10 @@
 
 .home h1{
     color: $light-gray;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 35px;
     font-weight: 300;
+    text-transform: uppercase;
 
 }
 
@@ -19,13 +20,65 @@
     width: 270px;
 }
 
-.home a{
-    margin-top: 50px;
-    font-size: 20px;
-    text-decoration: none;
-    border-radius: 20px;
-    border: 1px solid red;
-    background-color: $light-red;
-    color: $light-gray;
-    padding: 10px;
+.pulse-button{
+	margin: 35px auto;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 100px;
+	padding: 15px 20px;
+	border: 0px solid #000;
+}
+
+.pulse-button a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.pulse-button {
+	animation: borderPulse 1000ms infinite ease-out, colorShift 10000ms infinite ease-in;
+}
+
+.pulse-button-hover {
+	animation: colorShift 10000ms infinite ease-in;
+}
+
+.home a:hover,
+.home a:focus {
+	animation: borderPulse 1000ms infinite ease-out, colorShift 10000ms infinite ease-in, hoverShine 200ms;
+}
+
+@keyframes colorShift {
+	0%, 100% {
+			background: $medium-pink;
+	}
+	33% {
+		background: $light-red;
+	}
+	66%{
+		background: $dark-red;
+	}
+}
+
+@keyframes borderPulse {
+  0% {
+    box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1);
+  }
+  100% {
+    box-shadow: inset 0px 0px 0px 3px rgba(255, 0, 55, 0.2), 0px 0px 0px 10px rgba(255,255,255,0);
+  }
+}
+
+@keyframes hoverShine {
+	0%{
+		background-image: linear-gradient(135deg, rgba(255,255,255,.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+	}
+	50%{
+		background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 50%, rgba(255,255,255,0) 100%);
+	}
+	100%{
+		background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,.4) 100%);
+	}
 }
