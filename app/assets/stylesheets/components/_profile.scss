@@ -70,12 +70,6 @@ color: $medium-gray;
   font-size: 22px;
   color: $dark-blue;
   }
-.progress-card .progress-bar {
-  height: 10px;
-  width: 150px;
-  background-color: orange;
-  border-radius: 25px;
-}
 
 .avatar-leader img {
   height: 50px;
@@ -95,4 +89,10 @@ color: $medium-gray;
   margin-left: 10px;
   margin-top: 15px;
   color: $dark-blue;
+}
+
+.progress-card .progress-bar {
+  height: 10px;
+  background-color: orange;
+  border-radius: 25px;
 }
