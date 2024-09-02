@@ -30,7 +30,11 @@
         <div class="score-num">
             <p>Your score:</p>
             <p> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
-            <%= link_to 'Next challange'%>
+            <% if @correct_answers_count != @challenge.questions.count %>
+                <%= link_to 'Try Again!', challenges_path %>
+            <% else %>
+                <%= link_to 'Next challange', challenges_path(@next_challange)%>
+            <% end %>
         </div>
     </div>
     

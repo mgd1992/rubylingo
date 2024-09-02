@@ -6,7 +6,6 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @user_challenge = UserChallenge.find_by(challenge: @challenge, user: current_user)
-    # If I have no question params, then get the first question
     @question = Question.where(challenge: @challenge).find { |question| UserAnswer.find_by(question: question, user_challenge: @user_challenge).nil?  }
 
     if @question
@@ -17,6 +16,12 @@ class ChallengesController < ApplicationController
       @user_challenge.user_answers.each do |user_answer|
         @correct_answers_count += 1 if user_answer.answer.is_correct
       end
+
+      # Find the next challenge (maybe look at the order)
+      @next_challenge = Challenge.find_by(order: @challenge.order + 1, level: @challenge.level)
+      
+      # Create the UserChallenge for that next challenge and that user
+      UserChallenge.create(challenge: @next_challenge, user: current_user)
     end
 
 
