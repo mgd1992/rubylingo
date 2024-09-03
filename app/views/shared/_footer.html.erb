@@ -1,6 +1,6 @@
 <div class="footer">
 
-  
+
 
         <div class="d-flex flex-column justify-content-center align-items-center">
             <i class="fa-brands fa-nfc-symbol"></i>
@@ -18,16 +18,16 @@
             <ul class="navbar-nav me-auto">
                 <% if user_signed_in? %>
                 <%= link_to profile_path(current_user), class: "navbar-brand" do %>
-                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "p avatar", alt: "dropdown menu" %>
+                    <%= cl_image_tag @user.photo.key, class: "p avatar", alt: "dropdown menu" %>
                 <% end %>
                 <% else %>
                     <div class="d-flex flex-column justify-content-center align-items-center ">
-                        <i class="fa-regular fa-user"></i>   
+                        <i class="fa-regular fa-user"></i>
                         <%= link_to "Login", new_user_session_path, class: "p nav-link" %>
                     </div>
                 <% end %>
             </ul>
         </div>
 
-  
+
 </div>
