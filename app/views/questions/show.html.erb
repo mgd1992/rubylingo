@@ -1,0 +1,31 @@
+<div class="chat">
+  <div class="container user-selection">
+    <%= link_to challenge_path(@question.challenge) do %>
+      <i class="fa-solid fa-circle-xmark"></i>
+    <% end %>
+  </div>
+  <div class="container line"></div>
+  <h1><%= @question.content %></h1>
+
+<%= turbo_stream_from "question_#{@question.id}_messages" %>
+<div id="messages" class="messages">
+  <% @question.messages.each do |message| %>
+    <%= render "messages/message", message: message %>
+  <% end %>
+</div>
+
+<%= simple_form_for [@question, @message],
+  html: {class: "d-flex",
+   data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }} do |f|
+%>
+
+
+  <%= f.input :content,
+    label: false,
+    placeholder: "Message",
+    wrapper_html: {class: "flex-grow-1"}
+  %>
+  <%= f.submit "Send", class: "btn btn-danger mb-3" %>
+<% end %>
+
+</div>
