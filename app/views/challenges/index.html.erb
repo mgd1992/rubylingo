@@ -9,22 +9,31 @@
     <% @challenges.each do |challenge| %>
         <%# If the user has a user_challenge for the current challenge then he should be able to access it %>
         <%# If not, the level is disabled %>
-        <div class="challenge-list">
-            <% if current_user.user_challenges.find { |user_challenge| user_challenge.challenge_id == challenge.id } %>
+        <% user_challenge = UserChallenge.find_by(user: current_user, challenge: challenge) %>
+        <div class="challenge-list <%= 'active' if user_challenge && !user_challenge&.succeeded? %>">
+            <% if user_challenge  %>
                 <div class="challenge-card active">
-                    <div class="challenge-i ">
+                    <div class="challenge-i">
                         <i class="fa-solid fa-gem"></i>
                     </div>
                     <div class="challenge-title">
                         <li class="list-unstyled "> <%= link_to challenge.title, challenge_path(challenge) %></li>
-                        <p>To do</p>
+                        
+                        <% if user_challenge.succeeded? %>
+                            <p class="text-success">COMPLETED</p>
+                        <% else %>
+                            <p>To do</p>
+                        <% end %>
+
                     </div>
                 </div>
             <% else %>
-                <div class="challenge-card">
+                <div class="challenge-card disable">
+
                     <div class="challenge-i">
-                        <i class="fa-solid fa-lock"></i>
+                        <i class="fa-solid fa-lock locked-i"></i>
                     </div>
+
                     <div class="challenge-title">
                         <li class="list-unstyled locked"> <%= challenge.title %></li>
                         <p>Locked</p>

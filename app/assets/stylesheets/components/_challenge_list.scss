@@ -8,12 +8,9 @@
     background-color: $light-gray;
 }
 
-.challenge-list:first-child{
-    background-color: $medium-pink;
-}
-
-.challenge-list:first-child .challenge-title a{
-    color: black;
+.challenge-list.active{
+    background-color: $light-pink;
+    border: 2px solid $medium-pink;
 }
 
 .challenge-card{
@@ -22,10 +19,13 @@
     cursor: pointer;
 }
 
+.challenge-card.disable{
+    opacity: .3;
+}
+
 .challenge-i{
     width: 68px;
     height: 68px;
-    color: #787E87;
     border: 1px solid black;
     background-color: $light-gray;
     border-radius: 25%;
@@ -36,11 +36,16 @@
 
 .challenge-i i{
     font-size: 50px;
+    color: $medium-red;
+}
+
+.challenge-i .locked-i{
+    font-size: 50px;
     color: $medium-gray;
 }
 
 .challenge-card.active .challenge-i{
-    background-color: $light-blue;
+    background-color: $light-gray;
 }
 
 .challenge-title{
@@ -48,6 +53,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.challenge-title P{
+    margin: 0px;
+    margin-top: 8px;
 }
 
 .challenge-title a{
@@ -59,9 +69,4 @@
 .challenge-title .locked{
     color: $medium-gray;
     font-weight: bold;
-}
-
-.challenge-title p{
-    color: $dark-blue;
-    
 }

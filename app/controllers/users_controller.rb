@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def show
+  def showe
     @challenges = Challenge.where(level: current_user.knowledge_level)
   end
   

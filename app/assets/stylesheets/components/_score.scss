@@ -4,41 +4,25 @@
     align-items: center;
 }
 
-.score-title i{
-    font-size: 100px;
-    color: $green;
-    margin-bottom: 15px;
-}
-
-.score-title p{
-    font-size: 40px;
-}
-
-
-.score{
-    display: block;
-    height: 350px;
-    background-image: url("girl.png");
-}
-
-.score-num{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: start;
-}
-
-.score-num p{
-    font-weight: bold;
+.score-title .done{
+    color: black;
+    font-size: 25px;
     margin: 0px;
 }
 
-.score-num p:last-child{
-    font-size: 30px;
+.score-title i{
+    font-size: 100px;
     color: $wine-red;
+    margin-bottom: 20px;
 }
 
-.score-num a{
+.score-title .practice{
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+}
+
+.score a{
     text-decoration: none;
     margin-top: 5px;
     padding: 7px;
@@ -47,4 +31,40 @@
     border-radius: 20px 20px;
     background-color: $medium-red;
     color: $white;
+    cursor: pointer;
 }
+
+.sad{
+    display: block;
+    height: calc(100vh - 285px);
+    background-image: url("sad.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.sad .total-score{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.happy{
+    display: block;
+    height: calc(100vh - 285px);
+    background-image: url("girl.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.happy .total-score{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.score-title .check{
+    font-size: 100px;
+    color: $green;
+    margin-bottom: 20px;
+}
+
