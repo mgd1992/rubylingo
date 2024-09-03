@@ -5,13 +5,10 @@ Rails.application.routes.draw do
   get '/select_level', to: "users#select_level", as: "select_level"
   get '/challenges_per_day', to: "users#challenges_per_day", as: "challenges_per_day"
   resources :challenges, only: [:index, :show]
-<<<<<<< HEAD
-=======
   resources :questions, only: :show do
     resources :messages, only: :create
   end
 
->>>>>>> cb978069dd342b51efd17b265d9907a620c01e6c
   resources :user_answers, only: [:create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
