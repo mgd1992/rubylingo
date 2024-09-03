@@ -1,0 +1,16 @@
+<div id="message-<%= message.id %>" data-controller="scroll-chat">
+  <small>
+    <div class="wrapper">
+      <strong><%= message.user.first_name %></strong>
+      <% if message.user.is_teacher %>
+        <div class="icons-1">
+          <span class="badge badge-info">
+            <p>Teacher</p>
+          </span>
+          <i class="fa-solid fa-award"></i>
+        </div>
+      <% end %>
+    </div>
+  </small>
+  <p><%= message.content %></p>
+</div>

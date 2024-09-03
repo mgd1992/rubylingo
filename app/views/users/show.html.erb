@@ -2,11 +2,26 @@
   <h1>Profile</h1>
   <%#= link_to 'Log Out', destroy_user_session_path(current_user), class:"btn sm-btn-primary" %>
 </div>
-
-<% if current_user.is_teacher %>
-  <div class="container profile-info">
-    <div class="profile-img">
-      <%= image_tag "moises.jpg" %>
+<div class="container profile-info">
+  <div class="profile-img">
+    <%= image_tag "rosalinda.png" %>
+  </div>
+  <div>
+   <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+  </div>
+</div>
+<div class="container progress-card">
+  <h5>You did well this week!</h5>
+  <h4><%= pluralize(current_user.user_challenges.count, 'challenge') %> completed / <%= @challenges.count %></h4>
+  <div class="progress-bar" style="width:<%= current_user.user_challenges.count.to_f / @challenges.count * 100 %>%"></div>
+</div>
+<div class="container">
+<div class="container leaderboard-card">
+  <h1>Leaderboard</h1>
+  <p>This week you crushed the challenges! Well done!</p>
+  <div class="users-leaderboard">
+    <div class="avatar-leader">
+      <%= image_tag "Norika.png" %>
     </div>
     <div>
     <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>

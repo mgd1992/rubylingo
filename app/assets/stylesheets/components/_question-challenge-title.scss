@@ -17,6 +17,11 @@
     align-items: center;
 }
 
+.question-help a{
+  text-decoration: none;
+  color: $medium-gray;
+}
+
 .question-help i{
     font-size: 25px;
     color: #E6C0FF;
@@ -75,5 +80,3 @@
 .btn-next btn{
     color: $white;
 }
-
-

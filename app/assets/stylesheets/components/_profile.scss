@@ -112,12 +112,6 @@ color: $medium-gray;
   font-size: 22px;
   color: $dark-blue;
   }
-.progress-card .progress-bar {
-  height: 10px;
-  width: 150px;
-  background-color: orange;
-  border-radius: 25px;
-}
 
 .avatar-leader img {
   height: 50px;
@@ -137,28 +131,4 @@ color: $medium-gray;
   margin-left: 10px;
   margin-top: 15px;
   color: $dark-blue;
-}
-
-
-.gems{
-  background-color: $light-blue-gray;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  padding: 40px;
-  margin-bottom: 10px;
-  border-radius: 30px 30px;
-}
-
-.gems p{
-  font-size: 70px;
-  margin-bottom: 0px;
-}
-
-.gems i{
-  margin-left: 10px;
-  color: $dark-red;
-  font-size: 80px;
 }

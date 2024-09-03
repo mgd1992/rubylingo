@@ -2,7 +2,7 @@
     <h1><%= @challenge.title %></h1>
     <div class="question-help">
         <i class="fa-regular fa-circle-question"></i>
-        <p>Help</p>
+        <p><%= link_to "Help", question_path(@question) %></p>
     </div>
 </div>
 
@@ -54,7 +54,4 @@
         
     </div>
 
-<% end %>   
-
-
-
+<% end %>
