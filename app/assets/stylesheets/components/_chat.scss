@@ -13,45 +13,69 @@
     background-color: $gray-200;
   }
 
-  .teacher {
-    font-weight: bold;
-    color: $purple;
-  }
-
-  .fa-solid {
+  .fa-circle-xmark {
     font-size: 22px;
-    margin-left: 145px;
+    margin-left: 320px;
+    margin-bottom: 12px;
     color: $wine-red;
   }
   .btn .btn-danger {
     color: whitesmoke;
     font-weight: 500;
   }
+  .fa-award {
+    font-size: 26px;
+    color: $dark-red;
+    margin-left: 5px;
+  }
+  .icons-1 {
+    margin-bottom: 5px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+  }
+  .wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     margin-top: 0;
-    padding: 12px 0px 12px 0px;
+    padding: 12px;
     color: $dark-blue;
     font-weight: bold;
-  }
-  p {
-    margin: 0px 10px 10px 0px;
-    font-size: 16px;
-    font-weight: 400;
   }
   .user-selection {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
+  .badge-info {
+    background-color: $purple;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 7px;
+  }
+  .badge-info p{
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .span{
+    display: flex;
+    justify-content:end;
+  }
   .messages {
     height: 100%;
     overflow: scroll;
     padding: 1rem;
     color: $dark-gray;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   #new_message {
@@ -66,4 +90,5 @@
       font-size: 500;
     }
   }
+
 }
