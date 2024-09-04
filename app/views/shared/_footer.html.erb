@@ -3,16 +3,22 @@
 
 
         <div class="d-flex flex-column justify-content-center align-items-center">
-            <i class="fa-brands fa-nfc-symbol"></i>
-            <%= link_to "Community", "#", class: "p nav-link" %>
+            <%= link_to challenges_path, class: "p nav-link" do %>
+                <i class="fa-brands fa-nfc-symbol"></i>
+                Community
+            <% end %>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <%= link_to "Search", challenges_path,class: "p nav-link" %>
+            <%= link_to challenges_path, class: "p nav-link" do %>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            <% end %>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center ">
-            <i class="fa-regular fa-circle-play"></i>
-            <%= link_to "Learn", challenges_path, class: "p nav-link" %>
+            <%= link_to challenges_path, class: "p nav-link" do %>
+                <i class="fa-solid fa-graduation-cap"></i>
+                Learn
+            <% end %>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center ">
             <ul class="navbar-nav me-auto">

@@ -38,15 +38,12 @@
     align-items: center;
     background-color: $pink;
     border-radius: 7px 7px;
-}
-
-.gem-i{
-    padding: 20px;
+    padding: 16px;
 }
 
 .gem-i i{
     font-size: 35px;
-
+    margin-right: 16px;
 }
 
 .question-h4{
@@ -56,6 +53,7 @@
 .question-h4 h4{
     font-size: 17px;
     color: $white;
+    margin-bottom: 0px;
 }
 
 .answers span{
@@ -77,6 +75,6 @@
     align-items: center;
 }
 
-.btn-next btn{
+.btn-next input[type="submit"]{
     color: $white;
 }

@@ -1,64 +1,42 @@
 <div class="container d-flex justify-content-between">
   <h1>Profile</h1>
-  <%#= link_to 'Log Out', destroy_user_session_path(current_user), class:"btn sm-btn-primary" %>
+  <%#= link_to 'Log Out', destroy_user_session_path(@user), class:"btn sm-btn-primary" %>
 </div>
 
-<% if current_user.is_teacher %>
+<% if @user.is_teacher %>
   <div class="container profile-info">
     <div class="profile-img">
       <%= cl_image_tag @user.photo.key %>
-      <div class="container profile-info">
-        <div class="profile-img">
-          <%= cl_image_tag @user.photo.key %>
-        </div>
-        <div>
-        <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-        </div>
-      </div>
-      <div class="container progress-card">
-        <h5>You did well this week!</h5>
-        <h4><%= pluralize(current_user.user_challenges.count, 'challenge') %> completed / <%= @challenges.count %></h4>
-        <div class="progress-bar"></div>
-      </div>
-<div class="container">
-<div class="container leaderboard-card">
-  <h1>Leaderboard</h1>
-  <p>This week you crushed the challenges! Well done!</p>
-  <div class="users-leaderboard">
-    <div class="avatar-leader">
-      <%= image_tag "Norika.png" %>
     </div>
     <div>
-    <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+      </div>
     </div>
-  </div>
+    
+    <div class="container progress-card">
+      <h5 class="text-center">Send a <i class="fa-regular fa-gem"></i> to the teacher!</h5>
+      <%= render "rewards" %>
+    </div>
 
-  <div class="container progress-card">
-    <h5 class="text-center">Send a Gem to the teacher!</h5>
-    <%= render "rewards" %>
-  </div>
-
-  <div class="container">
     <div class="gem-board">
       <div class="gems">
-        <p><%= @user.ruby_gems %> <span>x</span> <i class="fa-regular fa-gem"></i></p>
+        <p><%= @user.ruby_gems %> </p> <span> x</span> <i class="fa-regular fa-gem"></i>
       </div>
     </div>
   </div>
-
 <% else %>
   <div class="container profile-info">
     <div class="profile-img">
       <%= cl_image_tag @user.photo.key %>
     </div>
     <div>
-      <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
     </div>
   </div>
   <div class="container progress-card">
     <h5>You did well this week!</h5>
-    <h4><%= current_user.user_challenges.count %> challenges completed / <%= @challenges.count %></h4>
-    <div class="progress-bar" style="width:<%= current_user.user_challenges.count.to_f / @challenges.count * 100 %>%"></div>
+    <h4><%= @user.user_challenges.count %> challenges completed / <%= @challenges.count %></h4>
+    <div class="progress-bar" style="width:<%= @user.user_challenges.count.to_f / @challenges.count * 100 %>%"></div>
   </div>
   <div class="container">
     <div class="container leaderboard-card">
