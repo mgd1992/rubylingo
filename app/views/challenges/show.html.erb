@@ -1,9 +1,11 @@
 <div class=" my-4 question-challenge-title">
     <h1><%= @challenge.title %></h1>
-    <div class="question-help">
-        <i class="fa-regular fa-circle-question"></i>
-        <p><%= link_to "Help", question_path(@question) %></p>
-    </div>
+    <% if @question %>
+      <div class="question-help">
+          <i class="fa-regular fa-circle-question"></i>
+          <p class="mb-0"><%= link_to "Help", question_path(@question) %></p>
+      </div>
+    <% end %>
 </div>
 
 
@@ -19,7 +21,7 @@
         </div>
     </div>
     <%= render "answer_form" %>
-    
+
 <% else %>
     <div class="score">
 
@@ -33,8 +35,8 @@
                 <p>Your score:</p>
                 <p class="total-score"> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
                 <%= link_to 'Try Again!', challenge_path(@challenge, restart: 1) %>
-            </div>    
-                      
+            </div>
+
         <% else %>
 
             <div class="happy">
@@ -52,7 +54,7 @@
                 <% end %>
             </div>
         <% end %>
-        
+
     </div>
 
 <% end %>

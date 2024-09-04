@@ -132,3 +132,9 @@ color: $medium-gray;
   margin-top: 15px;
   color: $dark-blue;
 }
+
+.progress-card .progress-bar {
+  height: 10px;
+  background-color: orange;
+  border-radius: 25px
+}

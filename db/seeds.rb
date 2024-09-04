@@ -1,24 +1,13 @@
 require 'faker'
+require 'open-uri'
+
 UserAnswer.destroy_all
 UserChallenge.destroy_all
+Message.destroy_all
 User.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Challenge.destroy_all
-
-
-# Create students
-10.times do |i|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "students_#{i + 1}@gmail.com", password: "1234567", password_confirmation: "1234567", knowledge_level: rand(1..3))
-end
-puts "created students"
-
-#Create teachers
-
-10.times do |i|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "teachers_#{i + 1}@gmail.com", password: "1234567", password_confirmation: "1234567", is_teacher: true)
-end
-puts "created teachers"
 
 # LEVEL 1
 # Challenge 1: INTRODUCTION TO RUBY
@@ -187,7 +176,7 @@ Answer.create!(content: "In a binary search tree, the left child is always less 
 Answer.create!(content: "A binary tree can have any number of children, while a binary search tree can only have two.", is_correct: false, question: question_trees_1)
 Answer.create!(content: "There is no difference between a binary search tree and a binary tree.", is_correct: false, question: question_trees_1)
 
-# Challenge 3 
+# Challenge 3
 
 challenge_control_flow = Challenge.create!(title: "Control Flow", level: 2, order: 3)
 
@@ -230,7 +219,7 @@ Answer.create!(content: "There is no difference between `break` and `next`.", is
 
 challenge_advanced_ruby_concepts = Challenge.create!(title: "Advanced Ruby Concepts", level: 3, order: 1)
 
-# Challenge 1 
+# Challenge 1
 question_metaprogramming = Question.create!(content: "What is the purpose of the `method_missing` method?", challenge: challenge_advanced_ruby_concepts)
 Answer.create!(content: "To define a default behavior for methods that are not defined on an object", is_correct: true, question: question_metaprogramming)
 Answer.create!(content: "To call a method on another object", is_correct: false, question: question_metaprogramming)
@@ -331,6 +320,21 @@ Answer.create!(content: "Use the `gsub` method with the regular expression `/[A-
 
 puts "Challenges created"
 
+# Create students
+10.times do |i|
+  user = User.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "students_#{i + 1}@gmail.com", password: "1234567", password_confirmation: "1234567", knowledge_level: rand(1..3))
+  file = URI.parse("https://xsgames.co/randomusers/avatar.php?g=male").open
+  user.photo.attach(io: file, filename: "student.jpg", content_type: "image/jpg")
+  user.save
+end
+puts "created students"
 
+#Create teachers
 
-
+10.times do |i|
+  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "teachers_#{i + 1}@gmail.com", password: "1234567", password_confirmation: "1234567", is_teacher: true)
+  file = URI.parse("https://xsgames.co/randomusers/avatar.php?g=female").open
+  user.photo.attach(io: file, filename: "teacher.jpg", content_type: "image/jpg")
+  user.save
+end
+puts "created teachers"

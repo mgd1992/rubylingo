@@ -18,7 +18,7 @@
             <ul class="navbar-nav me-auto">
                 <% if user_signed_in? %>
                 <%= link_to profile_path(current_user), class: "navbar-brand" do %>
-                    <%#= cl_image_tag @user.photo.key, class: "p avatar", alt: "dropdown menu" %>
+                    <%= cl_image_tag current_user.photo.key, class: "p avatar", alt: "dropdown menu" %>
                 <% end %>
                 <% else %>
                     <div class="d-flex flex-column justify-content-center align-items-center ">
