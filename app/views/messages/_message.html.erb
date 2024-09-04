@@ -7,6 +7,9 @@
           <span class="badge badge-info">
             <p>Teacher</p>
           </span>
+          <%= link_to profile_path(message.user) do %>
+            <i class="fa-solid fa-award"></i>
+          <% end %>
         </div>
 
       <% else %>
@@ -14,7 +17,6 @@
           <span class="badge badge-info">
             <p>Student</p>
           </span>
-          <i class="fa-solid fa-award"></i>
         </div>
       <% end %>
     </div>
