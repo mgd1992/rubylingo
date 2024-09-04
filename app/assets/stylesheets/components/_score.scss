@@ -17,30 +17,29 @@
 }
 
 .score-title .practice{
-    font-weight: bold;
     color: black;
     font-size: 25px;
 }
 
 .score a{
     text-decoration: none;
-    margin-top: 5px;
-    padding: 7px;
-    font-size: 17px;
-    border: 1px solid red;
-    border-radius: 20px 20px;
-    background-color: $medium-red;
-    color: $white;
-    cursor: pointer;
+    width: 100%;
+    font-weight:500;
+    text-align: center;
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    color: whitesmoke;
+    background-color: $wine-red;
+    text-decoration: none;
 }
 
 .sad{
     display: block;
-    height: calc(100vh - 285px);
+    height: calc(100vh - 290px);
     background-image: url("sad.png");
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 310px;
 }
 
 .sad .total-score{
@@ -50,11 +49,11 @@
 
 .happy{
     display: block;
-    height: calc(100vh - 285px);
+    height: calc(100vh - 262px);
     background-image: url("girl.png");
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 300px;
 }
 
 .happy .total-score{
@@ -66,5 +65,12 @@
     font-size: 100px;
     color: $green;
     margin-bottom: 20px;
+}
+
+.block-score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 

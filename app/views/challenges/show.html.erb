@@ -1,12 +1,12 @@
 <div class=" my-4 question-challenge-title">
     <h1><%= @challenge.title %></h1>
-    <div class="question-help">
-        <i class="fa-regular fa-circle-question"></i>
-        <p><%= link_to "Help", question_path(@question) %></p>
-    </div>
+    <% if @question %>
+        <div class="question-help">
+            <i class="fa-regular fa-circle-question"></i>
+            <p><%= link_to "Help", question_path(@question) %></p>
+        </div>
+    <% end %>
 </div>
-
-
 
 <% if @question.present? %>
 
@@ -30,9 +30,11 @@
                     <i class="fa-regular fa-face-frown"></i>
                     <p class="practice">You need more practice!</p>
                 </div>
-                <p>Your score:</p>
-                <p class="total-score"> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
-                <%= link_to 'Try Again!', challenge_path(@challenge, restart: 1) %>
+                <div class="block-score">
+                    <p class="total-score"> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
+                    <%= link_to 'Try Again', challenge_path(@challenge, restart: 1) %>
+                </div>
+
             </div>    
                       
         <% else %>
@@ -42,14 +44,19 @@
                     <i class="fa-solid fa-circle-check check"></i>
                     <p class="done">Well done!</p>
                 </div>
-                <p>Your score:</p>
-                <p class="total-score"> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
 
-                <% if @next_challenge %>
-                    <%= link_to 'Next challenge', challenge_path(@next_challenge)%>
-                <% else %>
-                    <%= link_to 'Next Level', challenges_path(update_level: current_user.knowledge_level + 1) %>
-                <% end %>
+                <div class="block-score">
+
+                    <p class="total-score"> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
+
+                    <% if @next_challenge %>
+                        <%= link_to 'Next challenge', challenge_path(@next_challenge)%>
+                    <% else %>
+                        <%= link_to 'Next Level', challenges_path(update_level: current_user.knowledge_level + 1) %>
+                    <% end %>
+
+                </div>
+
             </div>
         <% end %>
         
