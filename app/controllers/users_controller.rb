@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @challenges = Challenge.where(level: current_user.knowledge_level)
+    user_levels = @user.challenges.pluck(:level).uniq # These are all the levels of the challenges that the user attempted
+    @challenges = Challenge.where(level: user_levels) # There are all the challenges available within the levels of the challenges that the user attempted
   end
   
   def select_level
