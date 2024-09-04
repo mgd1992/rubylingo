@@ -77,5 +77,6 @@ group :test do
 end
 
 gem 'faker'
+gem "cloudinary"
 
 gem "actioncable-enhanced-postgresql-adapter"
