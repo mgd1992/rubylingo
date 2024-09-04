@@ -21,33 +21,36 @@
 }
 
 .pulse-button{
-	margin: 35px auto;
+	margin-top: 55px;
 	font-size: 20px;
-	cursor: pointer;
 	border-radius: 100px;
 	padding: 15px 20px;
 	border: 0px solid #000;
+  opacity: 0.85;
 }
 
 .pulse-button a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #ffffff;
   font-size: 18px;
   font-weight: 500;
+  color: $dark-red;
+  font-weight: 700;
 }
 
 .pulse-button {
-	animation: borderPulse 1000ms infinite ease-out, colorShift 10000ms infinite ease-in;
-}
+  align-items: center;
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 48px;
+  padding: 2px 24px;
 
-.pulse-button-hover {
-	animation: colorShift 10000ms infinite ease-in;
-}
-
-.home a:hover,
-.home a:focus {
-	animation: borderPulse 1000ms infinite ease-out, colorShift 10000ms infinite ease-in, hoverShine 200ms;
+  animation: borderPulse 0.55s ease-in-out;
 }
 
 @keyframes colorShift {
@@ -64,21 +67,9 @@
 
 @keyframes borderPulse {
   0% {
-    box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1);
   }
   100% {
-    box-shadow: inset 0px 0px 0px 3px rgba(255, 0, 55, 0.2), 0px 0px 0px 10px rgba(255,255,255,0);
+    box-shadow: 0px 0px 0px 3px rgba(255, 0, 55, 0.2), 0px 0px 0px 50px rgba(255,255,255,0);
   }
-}
-
-@keyframes hoverShine {
-	0%{
-		background-image: linear-gradient(135deg, rgba(255,255,255,.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
-	}
-	50%{
-		background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 50%, rgba(255,255,255,0) 100%);
-	}
-	100%{
-		background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,.4) 100%);
-	}
 }
