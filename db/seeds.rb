@@ -25,39 +25,39 @@ Answer.create!(content: "It doesn't mean anything in Ruby", is_correct: false, q
 Answer.create!(content: "It's an object that holds data", is_correct: true, question: question_variable)
 Answer.create!(content: "It's the equivalent of a function in Javascript", is_correct: false, question: question_variable)
 
-question_basic_syntax_1 = Question.create!(content: "What is the correct way to comment a single line in Ruby?", challenge: challenge_introduction_to_ruby)
-Answer.create!(content: "// This is a comment", is_correct: false, question: question_basic_syntax_1)
-Answer.create!(content: "# This is a comment", is_correct: true, question: question_basic_syntax_1)
-Answer.create!(content: "; This is a comment", is_correct: false, question: question_basic_syntax_1)
+# question_basic_syntax_1 = Question.create!(content: "What is the correct way to comment a single line in Ruby?", challenge: challenge_introduction_to_ruby)
+# Answer.create!(content: "// This is a comment", is_correct: false, question: question_basic_syntax_1)
+# Answer.create!(content: "# This is a comment", is_correct: true, question: question_basic_syntax_1)
+# Answer.create!(content: "; This is a comment", is_correct: false, question: question_basic_syntax_1)
 
 question_basic_syntax_2 = Question.create!(content: "How do you print a string to the console?", challenge: challenge_introduction_to_ruby)
 Answer.create!(content: "print(\"Hello, world!\")", is_correct: true, question: question_basic_syntax_2)
 Answer.create!(content: "console.log(\"Hello, world!\")", is_correct: false, question: question_basic_syntax_2)
 Answer.create!(content: "puts \"Hello, world!\"", is_correct: true, question: question_basic_syntax_2)
 
-question_basic_syntax_3 = Question.create!(content: "What is the purpose of the `end` keyword in Ruby?", challenge: challenge_introduction_to_ruby)
-Answer.create!(content: "To terminate a block of code", is_correct: true, question: question_basic_syntax_3)
-Answer.create!(content: "To declare the end of a variable", is_correct: false, question: question_basic_syntax_3)
-Answer.create!(content: "To start a new line of code", is_correct: false, question: question_basic_syntax_3)
+# question_basic_syntax_3 = Question.create!(content: "What is the purpose of the `end` keyword in Ruby?", challenge: challenge_introduction_to_ruby)
+# Answer.create!(content: "To terminate a block of code", is_correct: true, question: question_basic_syntax_3)
+# Answer.create!(content: "To declare the end of a variable", is_correct: false, question: question_basic_syntax_3)
+# Answer.create!(content: "To start a new line of code", is_correct: false, question: question_basic_syntax_3)
 
 question_basic_syntax_4 = Question.create!(content: "What is the data type of the value `true`?", challenge: challenge_introduction_to_ruby)
 Answer.create!(content: "String", is_correct: false, question: question_basic_syntax_4)
 Answer.create!(content: "Boolean", is_correct: true, question: question_basic_syntax_4)
 Answer.create!(content: "Integer", is_correct: false, question: question_basic_syntax_4)
 
-question_basic_syntax_5 = Question.create!(content: "How do you concatenate two strings?", challenge: challenge_introduction_to_ruby)
-Answer.create!(content: "Using the `+` operator", is_correct: true, question: question_basic_syntax_5)
-Answer.create!(content: "Using the `join` method", is_correct: false, question: question_basic_syntax_5)
-Answer.create!(content: "Using the `concat` method", is_correct: false, question: question_basic_syntax_5)
+# question_basic_syntax_5 = Question.create!(content: "How do you concatenate two strings?", challenge: challenge_introduction_to_ruby)
+# Answer.create!(content: "Using the `+` operator", is_correct: true, question: question_basic_syntax_5)
+# Answer.create!(content: "Using the `join` method", is_correct: false, question: question_basic_syntax_5)
+# Answer.create!(content: "Using the `concat` method", is_correct: false, question: question_basic_syntax_5)
 
 # Challenge 2: VARIABLES AND DATA TYPES
 
 challenge_variables_and_data_type = Challenge.create!(title: "Variables and data types", level: 1, order: 2)
 
-question_variables_and_data_types_1 = Question.create!(content: "What is the difference between a local and a global variable?", challenge: challenge_variables_and_data_type)
-Answer.create!(content: "Local variables are accessible within a method, while global variables are accessible from anywhere in the program.", is_correct: true, question: question_variables_and_data_types_1)
-Answer.create!(content: "There is no difference between local and global variables in Ruby.", is_correct: false, question: question_variables_and_data_types_1)
-Answer.create!(content: "Local variables are declared with the `var` keyword, while global variables are declared with the `global` keyword.", is_correct: false, question: question_variables_and_data_types_1)
+# question_variables_and_data_types_1 = Question.create!(content: "What is the difference between a local and a global variable?", challenge: challenge_variables_and_data_type)
+# Answer.create!(content: "Local variables are accessible within a method, while global variables are accessible from anywhere in the program.", is_correct: true, question: question_variables_and_data_types_1)
+# Answer.create!(content: "There is no difference between local and global variables in Ruby.", is_correct: false, question: question_variables_and_data_types_1)
+# Answer.create!(content: "Local variables are declared with the `var` keyword, while global variables are declared with the `global` keyword.", is_correct: false, question: question_variables_and_data_types_1)
 
 question_variables_and_data_types_2 = Question.create!(content: "What is the data type of the value `3.14`?", challenge: challenge_variables_and_data_type)
 Answer.create!(content: "Integer", is_correct: false, question: question_variables_and_data_types_2)
