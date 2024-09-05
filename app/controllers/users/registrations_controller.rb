@@ -62,7 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       challenges_per_day_path
     elsif request.referrer.include?("challenges_per_day")
       flash.delete(:notice)
-      challenges_path
+      profile_path(resource)
     end
   end
 

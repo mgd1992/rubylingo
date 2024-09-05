@@ -35,8 +35,8 @@
                     <%= link_to 'Try Again', challenge_path(@challenge, restart: 1) %>
                 </div>
 
-            </div>    
-                      
+            </div>
+
         <% else %>
 
             <div class="happy">
@@ -50,7 +50,7 @@
                     <p class="total-score"> <%= @correct_answers_count %> / <%= @challenge.questions.count %></p>
 
                     <% if @next_challenge %>
-                        <%= link_to 'Next challenge', challenge_path(@next_challenge)%>
+                        <%= link_to 'Next challenge', challenges_path%>
                     <% else %>
                         <%= link_to 'Next Level', challenges_path(update_level: current_user.knowledge_level + 1) %>
                     <% end %>
