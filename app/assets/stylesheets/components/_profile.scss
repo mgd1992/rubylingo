@@ -45,14 +45,12 @@ h1 {
   padding: 15px;
 }
 
-.count input[type="number"]{
+.count input[name="ruby_gems"]{
   background-color: transparent;
   font-size: 40px;
   text-align: center;
   border: none;
   width: 40px;
-  -webkit-transform: translateZ(0px);
-  color: #000;
 }
 
 .count p{
