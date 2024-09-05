@@ -51,6 +51,8 @@ h1 {
   text-align: center;
   border: none;
   width: 40px;
+  -webkit-transform: translateZ(0px);
+  color: #000;
 }
 
 .count p{
@@ -146,6 +148,7 @@ color: $medium-gray;
   background-color: $light-blue-gray;
   padding: 30px;
   border-radius: 30px 30px;
+  margin-bottom: 20px;
 }
 
 .gems{
