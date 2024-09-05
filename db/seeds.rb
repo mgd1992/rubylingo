@@ -338,3 +338,10 @@ puts "created students"
   user.save
 end
 puts "created teachers"
+
+user = User.create!(first_name: "Ben", last_name: "pham", email: "benpham@gmail.com", password: "secret", password_confirmation: "secret", is_teacher: true)
+file = URI.parse("https://ca.slack-edge.com/T02NE0241-UFD4SUGBX-30bbeeee8355-512").open
+user.photo.attach(io: file, filename: "ben.jpg", content_type: "image/jpg")
+user.save
+
+puts "created ben"

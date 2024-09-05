@@ -35,8 +35,8 @@
   </div>
   <div class="container progress-card">
     <h5>You did well this week!</h5>
-    <h4><%= @user.user_challenges.count %> challenges completed / <%= @challenges.count %></h4>
-    <div class="progress-bar" style="width:<%= @user.user_challenges.count.to_f / @challenges.count * 100 %>%"></div>
+    <h4><%= pluralize(@user.user_challenges.count - 1, 'challenge') %> completed / <%= @challenges.count %></h4>
+    <div class="progress-bar" style="width:<%= (@user.user_challenges.count - 1) / @challenges.count.to_f * 100 %>%"></div>
   </div>
   <div class="container">
     <div class="container leaderboard-card">
