@@ -2,7 +2,7 @@
 
 <%= form_with url: update_gems_path(@user), html: { id: "gem-form", data: { controller: "counter"} }  do |f| %>
     <div class="count">
-        <p data-action="click->counter#minus" data-counter-target= "minus" class="disabled"> <i class="fa-solid fa-circle-minus"></i> </p> <%= f.number_field :ruby_gems, data: { counter_target: "input" } %> <p data-action="click->counter#plus"> <i class="fa-solid fa-circle-plus"></i> </p>
+        <p data-action="click->counter#minus" data-counter-target= "minus" class="disabled"> <i class="fa-solid fa-circle-minus"></i> </p> <%= f.number_field :ruby_gems, data: { counter_target: "input" } %> <p data-action="click->counter#plus"> <i class="fa-solid fa-circle-plus" ></i> </p>
     </div>  
     <%= f.submit "Send"%>
 <% end %>

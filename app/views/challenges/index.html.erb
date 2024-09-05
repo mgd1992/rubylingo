@@ -7,8 +7,6 @@
 <ul class="p-0">
 
     <% @challenges.each do |challenge| %>
-        <%# If the user has a user_challenge for the current challenge then he should be able to access it %>
-        <%# If not, the level is disabled %>
         <% user_challenge = UserChallenge.find_by(user: current_user, challenge: challenge) %>
         <div class="challenge-list <%= 'active' if user_challenge && !user_challenge&.succeeded? %>">
             <% if user_challenge  %>
