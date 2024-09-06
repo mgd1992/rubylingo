@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="counter"
 export default class extends Controller {
-  static targets = ["input", "minus"]
+  static targets = ["input", "minus", "gemCounter"]
 
   connect() {
     this.inputTarget.value = 0;
@@ -12,6 +12,7 @@ export default class extends Controller {
   plus(){
     console.log("clicked plus");
     this.inputTarget.value ++;
+    this.gemCounterTarget.innerHTML = this.inputTarget.value;
     this.toggleMinusDisable()
   }
 
@@ -20,6 +21,7 @@ export default class extends Controller {
     
     console.log('clicked minus');
     this.inputTarget.value --;
+    this.gemCounterTarget.innerHTML = this.inputTarget.value;
     this.toggleMinusDisable()
     
   }
@@ -31,4 +33,6 @@ export default class extends Controller {
       this.minusTarget.classList.remove('disabled')
     }
   }
+
+
 }

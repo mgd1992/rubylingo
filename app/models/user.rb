@@ -12,6 +12,10 @@ class User < ApplicationRecord
   after_create :set_user_challenge
   after_save :set_user_challenge, if: -> { saved_change_to_knowledge_level? }
 
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
   private
 
   def set_user_challenge
